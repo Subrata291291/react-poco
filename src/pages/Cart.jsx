@@ -1,6 +1,7 @@
 import React, { useContext } from 'react';
 import { CartContext } from '../components/AddToCart';
 import { useNavigate } from 'react-router-dom';
+import { toast } from 'react-toastify';
 
 const Cart = () => {
   const {
@@ -23,6 +24,14 @@ const Cart = () => {
     (sum, item) => sum + Number(item.retailprice) * item.qty,
     0
   );
+
+  const handleAddToCart = (product) => {
+      const exists = cartItems.find((item) => item.id === product.id);
+      addToCart(product);
+      toast[exists ? 'info' : 'success'](`${product.title} ${exists ? 'quantity updated' : 'added to cart'}`, {
+        toastId: `${exists ? 'update' : 'add'}-${product.id}`,
+      });
+    };
 
   return (
     <section className="cart-area">
