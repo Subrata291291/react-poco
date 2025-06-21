@@ -25,25 +25,26 @@ const Cart = () => {
   );
 
   return (
-    <section className="cart-area">
+    <section className="cart-area py-5">
       <div className="container">
         <div className="row gx-lg-5">
+          {/* LEFT COLUMN - CART ITEMS */}
           <div className="col-md-8">
-            <div className="product-details-left" id="cart-items-container">
-              <div className="product-heading">
+            <div className="product-details-left">
+              <div className="product-heading mb-4">
                 <ul className="d-flex justify-content-between">
                   <li><h4>PRODUCT</h4></li>
                   <li className="d-none d-md-block"><h4>TOTAL</h4></li>
                 </ul>
               </div>
 
-              <div className="product-details-box" id="product-details-box">
+              <div className="product-details-box">
                 {cartItems.length === 0 ? (
                   <div className="text-left">
-                    <p>Your cart is empty.</p>
+                    <h5 className="text-muted mb-3">Your cart is empty.</h5>
                     <button
-                      className="btn-dark btn mt-4"
-                      style={{fontSize: '1.4rem', padding: '1rem 2rem'}}
+                      className="btn btn-dark"
+                      style={{ fontSize: '1.2rem', padding: '0.75rem 1.5rem' }}
                       onClick={() => navigate('/shop')}
                     >
                       Shop Now
@@ -56,7 +57,11 @@ const Cart = () => {
                         <div className="product-price-details">
                           <div className="row">
                             <div className="col-3">
-                              <div className="product-pic">
+                              <div
+                                className="product-pic"
+                                style={{ cursor: 'pointer' }}
+                                onClick={() => navigate(`/product/${item.id}`)}
+                              >
                                 <img
                                   src={item.image}
                                   alt={item.title}
@@ -66,22 +71,29 @@ const Cart = () => {
                             </div>
                             <div className="col-9">
                               <div className="product-price-details">
-                                <h4 className="product-title">{item.title}</h4>
-                                <h5 className="product-price mt-3">
-                                {formatPrice(item.retailprice)}
+                                <h4
+                                  className="product-title"
+                                  style={{ cursor: 'pointer' }}
+                                  onClick={() => navigate(`/product/${item.id}`)}
+                                >
+                                  {item.title}
+                                </h4>
+                                <h5 className="product-price mt-2">
+                                  {formatPrice(item.retailprice)}
                                 </h5>
                               </div>
-                              <div className="quantity-wrapper mt-4">
-                                <div className="quantity-selector">
+                              <div className="quantity-wrapper mt-3">
+                                <div className="quantity-selector d-flex align-items-center">
                                   <button
-                                    className="qty-btn minus"
+                                    className="qty-btn minus btn btn-outline-secondary btn-sm"
                                     onClick={() => decreaseQuantity(item.id)}
+                                    disabled={item.qty === 1}
                                   >
                                     -
                                   </button>
-                                  <span className="qty-value">{item.qty}</span>
+                                  <span className="mx-2">{item.qty}</span>
                                   <button
-                                    className="qty-btn plus"
+                                    className="qty-btn plus btn btn-outline-secondary btn-sm"
                                     onClick={() => increaseQuantity(item.id)}
                                   >
                                     +
@@ -90,8 +102,8 @@ const Cart = () => {
                                 <div>
                                   <button
                                     onClick={() => removeFromCart(item.id)}
-                                    className="remove-item text-danger mt-3 btn btn-link"
-                                    style={{ fontSize: '1rem' }}
+                                    className="remove-item text-danger mt-3 btn btn-link p-0"
+                                    style={{ fontSize: '0.95rem' }}
                                   >
                                     Remove item
                                   </button>
@@ -102,8 +114,9 @@ const Cart = () => {
                         </div>
                       </div>
 
+                      {/* TOTAL PER ITEM */}
                       <div className="col-md-6 d-none d-md-block">
-                        <div className="product-details-cart-total">
+                        <div className="product-details-cart-total text-end pe-4">
                           <h5 className="product-price mt-3">
                             {formatPrice(item.retailprice * item.qty)}
                           </h5>
@@ -116,6 +129,7 @@ const Cart = () => {
             </div>
           </div>
 
+          {/* RIGHT COLUMN - TOTAL */}
           <div className="col-md-4">
             <div className="product-cart-total border p-4 rounded shadow-sm">
               <h3 className="cart-total mb-4">CART TOTALS</h3>
