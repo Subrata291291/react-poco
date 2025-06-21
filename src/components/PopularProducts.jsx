@@ -64,7 +64,7 @@ const PopularProducts = () => {
             return (
               <div key={item.id} className="popular-box text-center p-3">
                 <div className="popular-pic position-relative">
-                  <img src={item.image} alt={item.title} style={{ maxHeight: '150px' }} />
+                  <img src={item.image} alt={item.title} style={{ cursor: 'pointer' }} onClick={() => navigate(`/product/${product.id}`)} />
                   {hasDiscount && (
                     <span className="discount-text position-absolute top-0 end-0 bg-danger text-white px-2 py-1 rounded" style={{ fontSize: '12px' }}>
                       {discountPercent}% OFF
