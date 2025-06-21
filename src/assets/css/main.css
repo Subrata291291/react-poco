@@ -1533,6 +1533,9 @@ a {
 .single-post-box {
   border-radius: 1rem;
 }
+#loginmodal .modal-body {
+  padding: 1rem 3rem 3rem;
+}
 .single-blog-area .single-blog-right .blog-category {
   border: 1px solid #ddd;
   border-radius: 1rem;
