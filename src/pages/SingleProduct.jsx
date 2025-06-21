@@ -4,7 +4,7 @@ import { useParams } from 'react-router-dom';
 import productsData from '../data/products';
 import { CartContext } from '../components/AddToCart';
 import renderStars from '../utils/renderStars';
-
+import { toast } from 'react-toastify';
 
 const SingleProduct = () => {
   const { id } = useParams();
@@ -25,11 +25,16 @@ const SingleProduct = () => {
   const handleQuantityChange = (type) => {
     setQuantity((prev) => (type === 'increase' ? prev + 1 : Math.max(prev - 1, 1)));
   };
+  
 
   const handleAddToCart = () => {
     for (let i = 0; i < quantity; i++) {
       addToCart(product);
     }
+    toast.success(`${product.title} added to cart (${quantity})`, {
+    toastId: `add-${product.id}`
+  });
+
   };
 
   const handleRemove = () => {
