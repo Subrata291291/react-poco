@@ -83,17 +83,17 @@ const Cart = () => {
                                 </h5>
                               </div>
                               <div className="quantity-wrapper mt-3">
-                                <div className="quantity-selector d-flex align-items-center">
+                                <div className="quantity-selector">
                                   <button
-                                    className="qty-btn minus btn btn-outline-secondary btn-sm"
+                                    className="qty-btn minus"
                                     onClick={() => decreaseQuantity(item.id)}
                                     disabled={item.qty === 1}
                                   >
                                     -
                                   </button>
-                                  <span className="mx-2">{item.qty}</span>
+                                  <span className="qty-value">{item.qty}</span>
                                   <button
-                                    className="qty-btn plus btn btn-outline-secondary btn-sm"
+                                    className="qty-btn plus"
                                     onClick={() => increaseQuantity(item.id)}
                                   >
                                     +
