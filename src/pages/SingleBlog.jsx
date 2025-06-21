@@ -95,7 +95,7 @@ const SingleBlog = () => {
                     }}
                     onClick={() => handleRecentPostClick(post)}
                   >
-                    <li style={{ width: '80px' }}>
+                    <li style={{ width: '150px' }}>
                       <img src={post.image} alt={post.title} className="img-fluid" />
                     </li>
                     <li>
