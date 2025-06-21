@@ -1,8 +1,8 @@
-import blog1 from '../assets/images/blog1.jpg';
-import blog2 from '../assets/images/blog2.jpg';
-// import blog3 from '../assets/images/blog5.jpg';
-// import blog4 from '../assets/images/blog8.jpg';
-// import blog5 from '../assets/images/blog4.jpg';
+import blog1 from '../assets/images/blog-1.jpg';
+import blog2 from '../assets/images/blog-2.jpg';
+import blog3 from '../assets/images/blog-5.jpg';
+import blog4 from '../assets/images/blog-8.jpg';
+import blog5 from '../assets/images/blog-4.jpg';
 
 
 const blogData = [
@@ -26,7 +26,7 @@ const blogData = [
     id: 3,
     title: "5 Quick Snack Ideas for Your Party",
     description: "Planning a party? Here are 5 quick and tasty snack recipes.",
-    image: blog1,
+    image: blog3,
     category: "Snacks",
     date: "14/06/2025"
   },
@@ -34,7 +34,7 @@ const blogData = [
     id: 4,
     title: "The Secret Behind Perfect Momos",
     description: "Momos have taken over India — here’s how to make them juicy and tasty.",
-    image: blog2,
+    image: blog4,
     category: "Snacks",
     date: "13/06/2025"
   },
@@ -42,7 +42,7 @@ const blogData = [
     id: 5,
     title: "Refreshing Summer Beverages to Try",
     description: "Beat the heat with these healthy and delicious summer drinks.",
-    image: blog1,
+    image: blog5,
     category: "Beverages",
     date: "12/06/2025"
   },
