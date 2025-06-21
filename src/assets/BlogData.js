@@ -36,7 +36,7 @@ const blogData = [
     description: "Momos have taken over India — here’s how to make them juicy and tasty.",
     image: blog4,
     category: "Snacks",
-    date: "15/06/2025"
+    date: "13/06/2025"
   },
   {
     id: 5,
@@ -44,7 +44,7 @@ const blogData = [
     description: "Beat the heat with these healthy and delicious summer drinks.",
     image: blog5,
     category: "Beverages",
-    date: "21/06/2025"
+    date: "12/06/2025"
   },
 ];
 
