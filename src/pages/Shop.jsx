@@ -153,11 +153,11 @@ const Shop = () => {
                           <h4 className="mt-3" style={{ cursor: 'pointer' }} onClick={() => navigate(`/product/${product.id}`)}>{product.title}</h4>
                           <div className="rating mb-2 mt-2">{renderStars(product.rating || 4.5)}</div>
                           <h5>
-                            ₹{price.toFixed(2)}
                             {hasDiscount && (
                               <del className="text-danger ms-2">₹{product.retailprice.toFixed(2)}</del>
                             )}
                           </h5>
+                          ₹{price.toFixed(2)}
                         </div>
                         {hasDiscount && (
                           <p className="discount-txt position-absolute top-0 start-0 text-white px-2 py-1 rounded-end bg-danger">
