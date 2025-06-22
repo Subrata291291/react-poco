@@ -154,7 +154,7 @@ const Shop = () => {
                           <div className="rating mb-2 mt-2">{renderStars(product.rating || 4.5)}</div>
                           <h5>
                             {hasDiscount && (
-                              <del className="text-danger ms-2">₹{product.retailprice.toFixed(2)}</del>
+                              <del className="text-danger me-2">₹{product.retailprice.toFixed(2)}</del>
                             )}
                             ₹{price.toFixed(2)}
                           </h5>
