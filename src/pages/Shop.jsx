@@ -156,8 +156,8 @@ const Shop = () => {
                             {hasDiscount && (
                               <del className="text-danger ms-2">₹{product.retailprice.toFixed(2)}</del>
                             )}
+                            ₹{price.toFixed(2)}
                           </h5>
-                          ₹{price.toFixed(2)}
                         </div>
                         {hasDiscount && (
                           <p className="discount-txt position-absolute top-0 start-0 text-white px-2 py-1 rounded-end bg-danger">
